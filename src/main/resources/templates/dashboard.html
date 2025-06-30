@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: layout">
+<body>
+<h2>Dashboard</h2>
+<div class="row">
+    <div class="col-md-6">
+        <p>Total Entradas do mês: <strong th:text="${entradaTotal}"></strong></p>
+        <p>Total Saídas do mês: <strong th:text="${saidaTotal}"></strong></p>
+        <canvas id="chart"></canvas>
+    </div>
+</div>
+<script th:inline="javascript">
+    const entrada = /*[[${entradaTotal}]]*/ 0;
+    const saida = /*[[${saidaTotal}]]*/ 0;
+    new Chart(document.getElementById('chart'), {
+        type: 'pie',
+        data: {
+            labels: ['Entrada', 'Saída'],
+            datasets: [{data: [entrada, saida], backgroundColor: ['#4caf50', '#f44336']}]
+        }
+    });
+</script>
+</body>
+</html>
