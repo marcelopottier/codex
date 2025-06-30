@@ -1,6 +1,7 @@
 # Spring Boot Demo
 
-This is a basic Spring Boot project structure.
+This is a basic Spring Boot project structure. It targets Java 17 and
+uses the Maven Compiler plugin to ensure the correct language level.
 
 ## Requirements
 
