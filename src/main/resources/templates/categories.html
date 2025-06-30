@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: layout">
+<body>
+<h2>Categorias</h2>
+<form th:action="@{/categories}" th:object="${category}" method="post" class="mb-3">
+    <div class="row g-2">
+        <div class="col-md-4"><input type="text" th:field="*{name}" placeholder="Nome" class="form-control" /></div>
+        <div class="col-md-4"><input type="text" th:field="*{color}" placeholder="Cor" class="form-control" /></div>
+        <div class="col-md-2"><button class="btn btn-primary" type="submit">Salvar</button></div>
+    </div>
+</form>
+<table class="table table-striped">
+    <thead><tr><th>Nome</th><th>Cor</th><th>Ações</th></tr></thead>
+    <tbody>
+    <tr th:each="c : ${categories}">
+        <td th:text="${c.name}"></td>
+        <td th:text="${c.color}"></td>
+        <td><a th:href="@{'/categories/delete/' + ${c.id}}" class="btn btn-sm btn-danger">Excluir</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" th:replace="layout :: layout">
+<body>
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h2>Login</h2>
+        <form th:action="@{/login}" method="post">
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" name="username" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input type="password" class="form-control" name="password" />
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+            <a th:href="@{/register}" class="btn btn-link">Registrar</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
